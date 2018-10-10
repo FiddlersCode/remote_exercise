@@ -17,6 +17,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
     "pre-commit": "^1.2.2"
