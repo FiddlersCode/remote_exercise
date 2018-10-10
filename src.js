@@ -4,6 +4,9 @@ class Src {
             return numberPRCsUsed + 1;
         }
 
+        if (numberPRCsUsed > 2) {
+            throw new Error('No remaining PRCs.');
+        }
         let n = 7;
         for (let i = 1; i < userId; i += 1) {
             n += 2;

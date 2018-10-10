@@ -30,6 +30,11 @@ describe('get PRC index', () => {
                 const numberPRCsUsed = 1;
                 expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(12);
             });
+
+            it('throws an error if no remaining PRCs', () => {
+                const numberPRCsUsed = 3;
+                expect(() => Src.getPRCIndex(userId, numberPRCsUsed)).to.throw('No remaining PRCs.');
+            });
         });
 
         describe('user id 3', () => {
@@ -58,16 +63,16 @@ describe('get PRC index', () => {
             });
         });
     });
-});
 
-describe('is user admin', () => {
-    it('returns an admin index', () => {
-        const userId = 1;
-        expect(Src.isUserAdmin(userId)).to.eq(true);
-    });
+    describe('is user admin', () => {
+        it('returns an admin index', () => {
+            const userId = 1;
+            expect(Src.isUserAdmin(userId)).to.eq(true);
+        });
 
-    it('returns an user index', () => {
-        const userId = 2;
-        expect(Src.isUserAdmin(userId)).to.eq(false);
+        it('returns an user index', () => {
+            const userId = 2;
+            expect(Src.isUserAdmin(userId)).to.eq(false);
+        });
     });
 });
