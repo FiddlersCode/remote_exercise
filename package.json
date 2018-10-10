@@ -1,0 +1,19 @@
+{
+  "name": "remote_exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src.js",
+  "scripts": {
+    "test": "test",
+    "eslint": "node_modules/.bin/eslint ."
+  },
+  "author": "Paula Muldoon",
+  "pre-commit": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.6.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "pre-commit": "^1.2.2"
+  }
+}
