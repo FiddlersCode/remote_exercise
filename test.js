@@ -31,6 +31,32 @@ describe('get PRC index', () => {
                 expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(12);
             });
         });
+
+        describe('user id 3', () => {
+            const userId = 3;
+            it('returns a user index', () => {
+                const numberPRCsUsed = 0;
+                expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.equal(14);
+            });
+
+            it('returns a user index', () => {
+                const numberPRCsUsed = 1;
+                expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(15);
+            });
+        });
+
+        describe('user id 4', () => {
+            const userId = 4;
+            it('returns a user index', () => {
+                const numberPRCsUsed = 1;
+                expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.equal(18);
+            });
+
+            it('returns a user index', () => {
+                const numberPRCsUsed = 2;
+                expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(19);
+            });
+        });
     });
 });
 

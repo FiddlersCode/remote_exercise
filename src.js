@@ -1,10 +1,14 @@
 class Src {
     static getPRCIndex(userId, numberPRCsUsed) {
-        if (Src.isUserAdmin(userId)) {
+        if (this.isUserAdmin(userId)) {
             return numberPRCsUsed + 1;
         }
 
-        const n = 9;
+        let n = 7;
+        let i;
+        for (i = 1; i < userId; i += 1) {
+            n += 2;
+        }
         return userId + numberPRCsUsed + n;
     }
 
