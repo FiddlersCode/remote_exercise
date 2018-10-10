@@ -4,16 +4,26 @@
   "description": "",
   "main": "src.js",
   "scripts": {
-    "test": "test",
-    "eslint": "node_modules/.bin/eslint ."
+    "test": "node_modules/.bin/mocha --recursive test/unit",
+    "eslint": "node_modules/.bin/eslint .",
+    "coverage": "node_modules/.bin/nyc --check-coverage --lines=95 --branches=95 --functions=95 --statements=95 npm run test"
   },
   "author": "Paula Muldoon",
-  "pre-commit": "",
+  "pre-commit": "coverage, eslint",
+  "nyc": {
+    "exclude": [
+      "test.js"
+    ]
+  },
   "license": "ISC",
   "dependencies": {
-    "eslint": "^5.6.1",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
     "pre-commit": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
