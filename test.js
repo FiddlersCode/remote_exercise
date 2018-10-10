@@ -20,7 +20,7 @@ describe('get PRC index', () => {
 
     describe('user index', () => {
         const userId = 2;
-        it('returns an admin index', () => {
+        it('returns a user index', () => {
             const numberPRCsUsed = 0;
             expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(11);
         });

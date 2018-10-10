@@ -3,7 +3,9 @@ class Src {
         if (Src.isUserAdmin(userId)) {
             return numberPRCsUsed + 1;
         }
-        return userId + 9;
+
+        const n = 9;
+        return userId + numberPRCsUsed + n;
     }
 
     static isUserAdmin(userId) {
