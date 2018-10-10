@@ -19,10 +19,17 @@ describe('get PRC index', () => {
     });
 
     describe('user index', () => {
-        const userId = 2;
-        it('returns a user index', () => {
-            const numberPRCsUsed = 0;
-            expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(11);
+        describe('user id 2', () => {
+            const userId = 2;
+            it('returns a user index', () => {
+                const numberPRCsUsed = 0;
+                expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(11);
+            });
+
+            it('returns a user index', () => {
+                const numberPRCsUsed = 1;
+                expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(12);
+            });
         });
     });
 });
