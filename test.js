@@ -17,4 +17,24 @@ describe('get PRC index', () => {
             expect(Src.getPRCIndex(adminUserId, numberPRCsUsed)).to.eq(4);
         });
     });
+
+    describe('user index', () => {
+        const userId = 2;
+        it('returns an admin index', () => {
+            const numberPRCsUsed = 0;
+            expect(Src.getPRCIndex(userId, numberPRCsUsed)).to.eq(11);
+        });
+    });
+});
+
+describe('is user admin', () => {
+    it('returns an admin index', () => {
+        const userId = 1;
+        expect(Src.isUserAdmin(userId)).to.eq(true);
+    });
+
+    it('returns an user index', () => {
+        const userId = 2;
+        expect(Src.isUserAdmin(userId)).to.eq(false);
+    });
 });
