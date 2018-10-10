@@ -1,4 +1,4 @@
-# Greeting Kata TDD
+# Remote Exercise
 by Paula Muldoon
 
 
