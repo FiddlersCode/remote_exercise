@@ -5,8 +5,7 @@ class Src {
         }
 
         let n = 7;
-        let i;
-        for (i = 1; i < userId; i += 1) {
+        for (let i = 1; i < userId; i += 1) {
             n += 2;
         }
         return userId + numberPRCsUsed + n;
