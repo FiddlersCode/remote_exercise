@@ -16,6 +16,11 @@ describe('get PRC index', () => {
             const numberPRCsUsed = 3;
             expect(Src.getPRCIndex(adminUserId, numberPRCsUsed)).to.eq(4);
         });
+
+        it('throws an error if no remaining PRCs', () => {
+            const numberPRCsUsed = 10;
+            expect(() => Src.getPRCIndex(adminUserId, numberPRCsUsed)).to.throw('No remaining PRCs.');
+        });
     });
 
     describe('user index', () => {
