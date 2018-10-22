@@ -2,7 +2,7 @@ const chai = require('chai');
 
 const { expect } = chai;
 
-const Src = require('./src');
+const Src = require('../src');
 
 describe('get PRC index', () => {
     describe('admin index', () => {

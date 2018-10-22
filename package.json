@@ -4,7 +4,7 @@
   "description": "",
   "main": "src.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --recursive test.js",
+    "test": "node_modules/.bin/mocha --recursive test/",
     "eslint": "node_modules/.bin/eslint .",
     "coverage": "node_modules/.bin/nyc --check-coverage --lines=95 --branches=95 --functions=95 --statements=95 npm run test"
   },
