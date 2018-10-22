@@ -7,6 +7,16 @@ const Fibonacci = require('../fibonacci');
 describe('Fibonacci', () => {
     describe('get Fibonacci sequence', () => {
         it('gets the sequence of numbers', () => {
+            const upperBound = 0;
+            expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep.eq([0]);
+        });
+
+        it('gets the sequence of numbers', () => {
+            const upperBound = 1;
+            expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep.eq([0, 1, 1]);
+        });
+
+        it('gets the sequence of numbers', () => {
             const upperBound = 5;
             expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep.eq([0, 1, 1, 2, 3, 5]);
         });
