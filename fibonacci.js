@@ -3,11 +3,13 @@ class Fibonacci {
         const sequence = [0, 1];
         let i = 1;
 
-        while (sequence.slice(-1) < upperBound) {
+        while (sequence.slice(-1) <= upperBound) {
             const n = sequence[i] + sequence[i - 1];
             sequence.push(n);
             i += 1;
         }
+
+        sequence.splice(-1);
         return sequence;
     }
 }
