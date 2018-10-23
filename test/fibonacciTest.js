@@ -28,12 +28,6 @@ describe('Fibonacci', () => {
         });
 
         it('gets the sequence of numbers', () => {
-            const upperBound = 50;
-            expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep
-                .eq([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
-        });
-
-        it('gets the sequence of numbers', () => {
             const upperBound = 55;
             expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep
                 .eq([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
@@ -42,6 +36,44 @@ describe('Fibonacci', () => {
         it('gets the sequence of numbers', () => {
             const upperBound = 1598;
             expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep
+                .eq([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]);
+        });
+    });
+
+    describe('get Fibonacci sequence', () => {
+        it('gets the sequence of numbers recursively', () => {
+            const upperBound = 0;
+            const i = 1;
+            expect(Fibonacci.getFibonacciSequenceRecursively(upperBound, [], i)).to.deep
+                .eq([0]);
+        });
+
+        it('gets the sequence of numbers recursively', () => {
+            const upperBound = 1;
+            const i = 1;
+
+            expect(Fibonacci.getFibonacciSequenceRecursively(upperBound, [], i)).to.deep
+                .eq([0, 1, 1]);
+        });
+
+        it('gets the sequence of numbers recursively', () => {
+            const upperBound = 2;
+            const i = 1;
+            expect(Fibonacci.getFibonacciSequenceRecursively(upperBound, [], i)).to.deep
+                .eq([0, 1, 1, 2]);
+        });
+
+        it('gets the sequence of numbers', () => {
+            const upperBound = 5;
+            const i = 1;
+            expect(Fibonacci.getFibonacciSequence(upperBound, [], i)).to.deep
+                .eq([0, 1, 1, 2, 3, 5]);
+        });
+
+        it('gets the sequence of numbers', () => {
+            const upperBound = 1598;
+            const i = 1;
+            expect(Fibonacci.getFibonacciSequence(upperBound, [], i)).to.deep
                 .eq([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]);
         });
     });
