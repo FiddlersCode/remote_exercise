@@ -39,5 +39,15 @@ class Fibonacci {
     static removeEvenNumbers(sequence) {
         return sequence.filter(value => value % 2 !== 0);
     }
+
+    static add(a, b) {
+        return a + b;
+    }
+
+    static addOddNumbers(upperBound) {
+        const sequence = Fibonacci.getFibonacciSequence(upperBound);
+        const oddNumbers = Fibonacci.removeEvenNumbers(sequence);
+        return oddNumbers.reduce(Fibonacci.add);
+    }
 }
 module.exports = Fibonacci;

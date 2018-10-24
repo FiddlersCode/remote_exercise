@@ -97,4 +97,24 @@ describe('Fibonacci', () => {
                 .eq([1, 1, 3]);
         });
     });
+
+    describe('adds numbers together', () => {
+        it('adds numbers', () => {
+            const upperBound = 5;
+            expect(Fibonacci.addOddNumbers(upperBound)).to.deep
+                .eq(10);
+        });
+
+        it('adds numbers', () => {
+            const upperBound = 3;
+            expect(Fibonacci.addOddNumbers(upperBound)).to.deep
+                .eq(5);
+        });
+
+        it('adds numbers', () => {
+            const upperBound = 4000000;
+            expect(Fibonacci.addOddNumbers(upperBound)).to.deep
+                .eq(4613732);
+        });
+    });
 });
