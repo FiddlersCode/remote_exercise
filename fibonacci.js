@@ -15,11 +15,6 @@ class Fibonacci {
 
 
     static getFibonacciSequenceRecursively(upperBound, sequence, i) {
-        if (upperBound === 0) {
-            sequence.push(0);
-            return sequence;
-        }
-
         if (sequence.length === 0) {
             sequence.push(0, 1);
         }

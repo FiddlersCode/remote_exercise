@@ -52,12 +52,6 @@ describe('Fibonacci', () => {
             i = 1;
         });
         it('gets the sequence of numbers recursively', () => {
-            const upperBound = 0;
-            expect(Fibonacci.getFibonacciSequenceRecursively(upperBound, [], i)).to.deep
-                .eq([0]);
-        });
-
-        it('gets the sequence of numbers recursively', () => {
             const upperBound = 1;
 
             expect(Fibonacci.getFibonacciSequenceRecursively(upperBound, [], i)).to.deep
