@@ -48,5 +48,11 @@ class Fibonacci {
         const oddNumbers = Fibonacci.removeEvenNumbers(sequence);
         return oddNumbers.reduce(Fibonacci.add);
     }
+
+    static addOddNumbersRecursively(upperBound, sequence, i) {
+        const array = Fibonacci.getFibonacciSequenceRecursively(upperBound, sequence, i);
+        const oddNumbers = Fibonacci.removeEvenNumbers(array);
+        return oddNumbers.reduce(Fibonacci.add);
+    }
 }
 module.exports = Fibonacci;

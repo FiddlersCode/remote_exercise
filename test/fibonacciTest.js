@@ -110,4 +110,29 @@ describe('Fibonacci', () => {
                 .eq(4613732);
         });
     });
+
+    describe('adds numbers together with recursive solution', () => {
+        let i;
+        beforeEach(() => {
+            i = 1;
+        });
+
+        it('adds numbers', () => {
+            const upperBound = 5;
+            expect(Fibonacci.addOddNumbersRecursively(upperBound, [], i)).to.deep
+                .eq(10);
+        });
+
+        it('adds numbers', () => {
+            const upperBound = 3;
+            expect(Fibonacci.addOddNumbersRecursively(upperBound, [], i)).to.deep
+                .eq(5);
+        });
+
+        it('adds numbers', () => {
+            const upperBound = 4000000;
+            expect(Fibonacci.addOddNumbersRecursively(upperBound, [], i)).to.deep
+                .eq(4613732);
+        });
+    });
 });
