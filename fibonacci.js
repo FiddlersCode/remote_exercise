@@ -28,6 +28,10 @@ class Fibonacci {
             this.getFibonacciSequenceRecursively(upperBound, sequence, i + 1);
         }
 
+        if (sequence.slice(-1) > upperBound) {
+            sequence.splice(-1);
+        }
+
         return sequence;
     }
 
