@@ -35,5 +35,9 @@ class Fibonacci {
 
         return sequence;
     }
+
+    static removeEvenNumbers(sequence) {
+        return sequence.filter(value => value % 2 !== 0);
+    }
 }
 module.exports = Fibonacci;

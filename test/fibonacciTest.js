@@ -89,4 +89,12 @@ describe('Fibonacci', () => {
             expect(Fibonacci.getFibonacciSequence(upperBound, [], i).length).to.deep.eq(34);
         });
     });
+
+    describe('removes the even numbers from the Fibonacci sequence', () => {
+        it('removes even numbers', () => {
+            const sequence = [0, 1, 1, 2, 3];
+            expect(Fibonacci.removeEvenNumbers(sequence)).to.deep
+                .eq([1, 1, 3]);
+        });
+    });
 });
