@@ -38,9 +38,15 @@ describe('Fibonacci', () => {
             expect(Fibonacci.getFibonacciSequence(upperBound)).to.deep
                 .eq([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]);
         });
+
+        it('gets the sequence of numbers up to 4 million', () => {
+            const upperBound = 4000000;
+            const actual = Fibonacci.getFibonacciSequence(upperBound);
+            expect(actual.length).to.eq(34);
+        });
     });
 
-    describe('get Fibonacci sequence', () => {
+    describe('get Fibonacci sequence recursively', () => {
         it('gets the sequence of numbers recursively', () => {
             const upperBound = 0;
             const i = 1;
@@ -75,6 +81,12 @@ describe('Fibonacci', () => {
             const i = 1;
             expect(Fibonacci.getFibonacciSequence(upperBound, [], i)).to.deep
                 .eq([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]);
+        });
+
+        it('gets the sequence of numbers up to 4 million', () => {
+            const upperBound = 4000000;
+            const i = 1;
+            expect(Fibonacci.getFibonacciSequence(upperBound, [], i).length).to.deep.eq(34);
         });
     });
 });
