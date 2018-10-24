@@ -20,11 +20,6 @@ class Fibonacci {
             return sequence;
         }
 
-        if (upperBound === 1) {
-            sequence.push(0, 1, 1);
-            return sequence;
-        }
-
         if (sequence.length === 0) {
             sequence.push(0, 1);
         }
