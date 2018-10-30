@@ -29,14 +29,16 @@ describe('get PRC index', () => {
         describe('user indices', () => {
             describe('user id 2', () => {
                 const userId = 2;
-                it('returns a user index', () => {
-                    const numberPRCsUsed = 0;
-                    expect(Prc.getPRCIndex(userId, numberPRCsUsed)).to.eq(11);
-                });
+                const numbersPRCsUsed = { 0: 11, 1: 12 };
 
-                it('returns a user index', () => {
-                    const numberPRCsUsed = 1;
-                    expect(Prc.getPRCIndex(userId, numberPRCsUsed)).to.eq(12);
+                Object.entries(numbersPRCsUsed).forEach((entry) => {
+                    const numberPRCsUsed = parseInt(entry[0], 10);
+                    const expected = parseInt(entry[1], 10);
+                    it('should return an admin index', () => {
+                        const actual = Prc.getPRCIndex(userId, numberPRCsUsed);
+                        expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
+                            .to.eq(expected);
+                    });
                 });
 
                 it('throws an error if no remaining PRCs', () => {
