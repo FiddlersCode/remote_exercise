@@ -22,7 +22,16 @@ class PRC {
     }
 
     static getPRCIndexRecursively(userId, numberPRCsUsed, i, n) {
+        const adminUserMaxPRCs = 10;
         const normalUserMaxPRCs = 3;
+
+        if (numberPRCsUsed >= adminUserMaxPRCs) {
+            throw new Error('No remaining PRCs.');
+        }
+
+        if (this.isUserAdmin(userId)) {
+            return numberPRCsUsed + 1;
+        }
 
         if (numberPRCsUsed >= normalUserMaxPRCs) {
             throw new Error('No remaining PRCs.');

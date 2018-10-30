@@ -72,6 +72,23 @@ describe('get PRC index', () => {
     });
 
     describe('get PRC index recursively', () => {
+        describe('admin index recurisvely', () => {
+            const adminUserId = 1;
+            it('returns an admin index', () => {
+                const numberPRCsUsed = 0;
+                expect(Prc.getPRCIndexRecursively(adminUserId, numberPRCsUsed, 1, 7)).to.eq(1);
+            });
+
+            it('returns an admin index with 3 used PRCs', () => {
+                const numberPRCsUsed = 3;
+                expect(Prc.getPRCIndexRecursively(adminUserId, numberPRCsUsed, 1, 7)).to.eq(4);
+            });
+
+            it('throws an error if no remaining PRCs', () => {
+                const numberPRCsUsed = 10;
+                expect(() => Prc.getPRCIndexRecursively(adminUserId, numberPRCsUsed, 1, 7)).to.throw('No remaining PRCs.');
+            });
+        });
         describe('user id 2', () => {
             const userId = 2;
             it('returns a user index', () => {
