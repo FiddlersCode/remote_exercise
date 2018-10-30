@@ -7,15 +7,17 @@ const Prc = require('../prc');
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('admin index', () => {
+            const numbersPRCsUsed = { 0: 1, 3: 4 };
             const adminUserId = 1;
-            it('returns an admin index', () => {
-                const numberPRCsUsed = 0;
-                expect(Prc.getPRCIndex(adminUserId, numberPRCsUsed)).to.eq(1);
-            });
 
-            it('returns an admin index with 3 used PRCs', () => {
-                const numberPRCsUsed = 3;
-                expect(Prc.getPRCIndex(adminUserId, numberPRCsUsed)).to.eq(4);
+            Object.entries(numbersPRCsUsed).forEach((entry) => {
+                const numberPRCsUsed = parseInt(entry[0], 10);
+                const expected = parseInt(entry[1], 10);
+                it('should return an admin index', () => {
+                    const actual = Prc.getPRCIndex(adminUserId, numberPRCsUsed);
+                    expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
+                        .to.eq(expected);
+                });
             });
 
             it('throws an error if no remaining PRCs', () => {
