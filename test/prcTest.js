@@ -49,27 +49,31 @@ describe('get PRC index', () => {
 
             describe('user id 3', () => {
                 const userId = 3;
-                it('returns a user index', () => {
-                    const numberPRCsUsed = 0;
-                    expect(Prc.getPRCIndex(userId, numberPRCsUsed)).to.equal(14);
-                });
+                const numbersPRCsUsed = { 0: 14, 1: 15 };
 
-                it('returns a user index', () => {
-                    const numberPRCsUsed = 1;
-                    expect(Prc.getPRCIndex(userId, numberPRCsUsed)).to.eq(15);
+                Object.entries(numbersPRCsUsed).forEach((entry) => {
+                    const numberPRCsUsed = parseInt(entry[0], 10);
+                    const expected = parseInt(entry[1], 10);
+                    it('should return an admin index', () => {
+                        const actual = Prc.getPRCIndex(userId, numberPRCsUsed);
+                        expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
+                            .to.eq(expected);
+                    });
                 });
             });
 
             describe('user id 4', () => {
                 const userId = 4;
-                it('returns a user index', () => {
-                    const numberPRCsUsed = 1;
-                    expect(Prc.getPRCIndex(userId, numberPRCsUsed)).to.equal(18);
-                });
+                const numbersPRCsUsed = { 1: 18, 2: 19 };
 
-                it('returns a user index', () => {
-                    const numberPRCsUsed = 2;
-                    expect(Prc.getPRCIndex(userId, numberPRCsUsed)).to.eq(19);
+                Object.entries(numbersPRCsUsed).forEach((entry) => {
+                    const numberPRCsUsed = parseInt(entry[0], 10);
+                    const expected = parseInt(entry[1], 10);
+                    it('should return an admin index', () => {
+                        const actual = Prc.getPRCIndex(userId, numberPRCsUsed);
+                        expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
+                            .to.eq(expected);
+                    });
                 });
             });
         });
