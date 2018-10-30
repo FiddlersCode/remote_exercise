@@ -3,12 +3,14 @@ const chai = require('chai');
 const { expect } = chai;
 
 const Prc = require('../prc');
+const spikeTest = require('../spikeTest');
 
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('admin index with loop', () => {
             const adminUserId = 1;
             const numbersPRCsUsed = { 0: 1, 3: 4 };
+
 
             Object.entries(numbersPRCsUsed).forEach((entry) => {
                 const numberPRCsUsed = parseInt(entry[0], 10);
@@ -89,6 +91,8 @@ describe('get PRC index', () => {
         describe('admin index recursively', () => {
             const adminUserId = 1;
             const numbersPRCsUsed = { 0: 1, 3: 4 };
+            spikeTest.test();
+
 
             Object.entries(numbersPRCsUsed).forEach((entry) => {
                 const numberPRCsUsed = parseInt(entry[0], 10);
