@@ -31,18 +31,23 @@ describe('get PRC index', () => {
 
     describe('get PRC index recursively', () => {
         describe('user indices', () => {
-            Object.entries(getPRCIndexRecursively.scenarios()).forEach((scenario) => {
-                it('should return a user index', () => {
-                    const actual = Prc.getPRCIndexRecursively(
-                        scenario[1].userId,
-                        scenario[1].numberPRCsUsed,
-                        getPRCIndexRecursively.data().i,
-                        getPRCIndexRecursively.data().n,
-                    );
-                    expect(actual, `number of PRCs used: ${scenario[1].numberPRCsUsed}`)
-                        .to.eq(scenario[1].expected);
-                });
-            });
+            // Object.entries(getPRCIndexRecursively.scenarios()).forEach((scenario) => {
+            //     it('should return a user index', () => {
+            //         const actual = Prc.getPRCIndexRecursively(
+            //             scenario[1].userId,
+            //             scenario[1].numberPRCsUsed,
+            //             getPRCIndexRecursively.data().i,
+            //             getPRCIndexRecursively.data().n,
+            //         );
+            //         expect(actual, `number of PRCs used: ${scenario[1].numberPRCsUsed}`)
+            //             .to.eq(scenario[1].expected);
+            //     });
+            // });
+
+            // CocoaJS.runTests(
+            //     getPRCIndexWithLoop.scenarios(),
+            //     getPRCIndexWithLoop.setup(),
+            // );
         });
 
         describe('error handling', () => {
