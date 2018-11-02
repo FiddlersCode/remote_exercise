@@ -9,7 +9,7 @@ class CocoaJS {
     static runTests(scenarios, setup) {
         Object.entries(scenarios).forEach((scenario) => {
             it(setup.it, () => {
-                const actual = testClass.getPRCIndexWithLoop(
+                const actual = testClass[setup.methodName](
                     scenario[1].userId,
                     scenario[1].numberPRCsUsed,
                 );

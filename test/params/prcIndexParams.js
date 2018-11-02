@@ -2,7 +2,7 @@ class PrcIndexParams {
     static setup() {
         return {
             filePath: '../../prc',
-            className: 'Prc',
+            methodName: 'getPRCIndexWithLoop',
             it: 'should return an admin index',
         };
     }
