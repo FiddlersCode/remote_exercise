@@ -5,6 +5,8 @@ class PrcIndexParams {
                 params: {
                     userId: 1,
                     numberPRCsUsed: 0,
+                    i: 1,
+                    n: 7,
                 },
                 message: 'number of PRCs used',
                 expected: 1,
@@ -14,7 +16,10 @@ class PrcIndexParams {
                 params: {
                     userId: 1,
                     numberPRCsUsed: 3,
+                    i: 1,
+                    n: 7,
                 },
+                message: 'number of PRCs used',
                 expected: 4,
             },
 
@@ -22,7 +27,10 @@ class PrcIndexParams {
                 params: {
                     userId: 2,
                     numberPRCsUsed: 0,
+                    i: 1,
+                    n: 7,
                 },
+                message: 'number of PRCs used',
                 expected: 11,
             },
 
@@ -30,7 +38,10 @@ class PrcIndexParams {
                 params: {
                     userId: 2,
                     numberPRCsUsed: 1,
+                    i: 1,
+                    n: 7,
                 },
+                message: 'number of PRCs used',
                 expected: 12,
             },
 
@@ -39,7 +50,10 @@ class PrcIndexParams {
                 params: {
                     userId: 3,
                     numberPRCsUsed: 0,
+                    i: 1,
+                    n: 7,
                 },
+                message: 'number of PRCs used',
                 expected: 14,
             },
 
@@ -47,7 +61,10 @@ class PrcIndexParams {
                 params: {
                     userId: 3,
                     numberPRCsUsed: 1,
+                    i: 1,
+                    n: 7,
                 },
+                message: 'number of PRCs used',
                 expected: 15,
             },
         };
