@@ -5,7 +5,7 @@ const { expect } = chai;
 const Prc = require('../prc');
 const getPRCIndexWithLoop = require('./params/getPRCIndexWithLoop');
 const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
-const CocoaJS = require('./params/cocoaJS');
+const CocoaJS = require('../cocoaJS/cocoaJS');
 const isUserAdmin = require('./params/isUserAdmin');
 const ErrorMessages = require('./params/errorMessages');
 
