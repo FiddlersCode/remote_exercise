@@ -4,7 +4,7 @@ class getPRCIndexRecursively extends PrcIndexParams {
     static setup() {
         return {
             codeFile: '../prc',
-            paramsFile: '../test/params/getPRCIndexRecursively',
+            paramsFilePath: '../test/params/getPRCIndexRecursively',
             methodName: 'getPRCIndexRecursively',
             it: 'should return a user index',
         };

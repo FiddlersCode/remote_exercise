@@ -16,7 +16,7 @@ describe('get PRC index', () => {
             CocoaJS.runTests(
                 getPRCIndexWithLoop.scenarios(),
                 getPRCIndexWithLoop.setup(),
-                getPRCIndexWithLoop.setup().paramsFile,
+                getPRCIndexWithLoop.setup().paramsFilePath,
             );
         });
 
@@ -35,7 +35,7 @@ describe('get PRC index', () => {
             CocoaJS.runTests(
                 getPRCIndexRecursively.scenarios(),
                 getPRCIndexRecursively.setup(),
-                getPRCIndexRecursively.setup().paramsFile,
+                getPRCIndexRecursively.setup().paramsFilePath,
             );
         });
 

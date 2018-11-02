@@ -4,8 +4,8 @@ const { expect } = chai;
 
 
 class CocoaJS {
-    static runTests(scenarios, setup, paramsFile) {
-        paramsFile = require(paramsFile);
+    static runTests(scenarios, setup, paramsFilePath) {
+        const paramsFile = require(paramsFilePath);
         const codeFile = require(paramsFile.setup().codeFile);
 
         Object.entries(scenarios).forEach((scenario) => {
@@ -15,7 +15,7 @@ class CocoaJS {
                     params.push(scenarioParam[1]);
                 });
                 const actual = codeFile[setup.methodName](...params);
-                expect(actual, `${scenario[1].message} ${scenario[1].params.numberPRCsUsed}`)
+                expect(actual, `${JSON.stringify(scenario[1].message)} ${JSON.stringify(scenario[1].params)}`)
                     .to.eq(scenario[1].expected);
             });
         });
