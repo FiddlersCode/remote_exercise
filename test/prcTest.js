@@ -5,6 +5,7 @@ const { expect } = chai;
 const Prc = require('../prc');
 const getPRCIndexWithLoop = require('./params/getPRCIndexWithLoop');
 const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
+const CocoaJS = require('./params/cocoaJS');
 const isUserAdmin = require('./params/isUserAdmin');
 const ErrorMessages = require('./params/errorMessages');
 
@@ -12,7 +13,7 @@ const ErrorMessages = require('./params/errorMessages');
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('user indices', () => {
-            getPRCIndexWithLoop.runTests(
+            CocoaJS.runTests(
                 getPRCIndexWithLoop.scenarios(),
                 getPRCIndexWithLoop.setup(),
             );

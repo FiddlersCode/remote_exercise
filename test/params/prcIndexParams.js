@@ -1,8 +1,9 @@
 class PrcIndexParams {
     static setup() {
         return {
+            filePath: '../../prc',
+            className: 'Prc',
             it: 'should return an admin index',
-            testClass: 'PRC',
         };
     }
 
