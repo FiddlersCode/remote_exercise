@@ -4,7 +4,7 @@ const { expect } = chai;
 
 const Prc = require('../prc');
 const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
-
+const ErrorMessages = require('./params/errorMessages');
 
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
@@ -114,7 +114,7 @@ describe('get PRC index', () => {
                         numberPRCsUsed,
                         i,
                         n,
-                    )).to.throw(getPRCIndexRecursively.errorMessages().noPrcError);
+                    )).to.throw(ErrorMessages.errorMessages().noPrcError);
                 });
             });
         });
