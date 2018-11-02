@@ -9,13 +9,13 @@ const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
 class spikeTest {
     static test() {
         Object.entries(getPRCIndexRecursively.scenarios()).forEach((scenario) => {
-            const adminUserId = scenario[1].adminUserId;
+            const userId = scenario[1].userId;
             const numberPRCsUsed = scenario[1].numberPRCsUsed;
             const expected = scenario[1].expected;
 
             it('should return an admin index', () => {
                 const actual = Prc.getPRCIndexRecursively(
-                    adminUserId,
+                    userId,
                     numberPRCsUsed,
                     getPRCIndexRecursively.sharedData().i,
                     getPRCIndexRecursively.sharedData().n,

@@ -9,13 +9,13 @@ class getPRCIndexRecursively {
     static scenarios() {
         return {
             scenario1: {
-                adminUserId: 1,
+                userId: 1,
                 numberPRCsUsed: 0,
                 expected: 1,
             },
 
             scenario2: {
-                adminUserId: 1,
+                userId: 1,
                 numberPRCsUsed: 3,
                 expected: 4,
             },
