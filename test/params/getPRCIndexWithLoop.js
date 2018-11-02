@@ -3,7 +3,8 @@ const PrcIndexParams = require('./prcIndexParams');
 class getPRCIndexWithLoop extends PrcIndexParams {
     static setup() {
         return {
-            filePath: '../../prc',
+            codeFile: '../../prc',
+            paramsFile: '../params/getPRCIndexWithLoop',
             methodName: 'getPRCIndexWithLoop',
             it: 'should return a user index',
         };
