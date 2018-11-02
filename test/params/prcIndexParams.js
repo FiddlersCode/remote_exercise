@@ -1,4 +1,11 @@
 class PrcIndexParams {
+    static setup() {
+        return {
+            it: 'should return an admin index',
+            testClass: 'PRC',
+        };
+    }
+
     static scenarios() {
         return {
             scenario1: {

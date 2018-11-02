@@ -12,16 +12,10 @@ const ErrorMessages = require('./params/errorMessages');
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('user indices', () => {
-            Object.entries(getPRCIndexWithLoop.scenarios()).forEach((scenario) => {
-                it('should return an admin index', () => {
-                    const actual = Prc.getPRCIndexWithLoop(
-                        scenario[1].userId,
-                        scenario[1].numberPRCsUsed,
-                    );
-                    expect(actual, `number of PRCs used: ${scenario[1].numberPRCsUsed}`)
-                        .to.eq(scenario[1].expected);
-                });
-            });
+            getPRCIndexWithLoop.runTests(
+                getPRCIndexWithLoop.scenarios(),
+                getPRCIndexWithLoop.setup(),
+            );
         });
 
         describe('error handling', () => {
