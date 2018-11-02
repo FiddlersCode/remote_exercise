@@ -3,7 +3,8 @@ const chai = require('chai');
 const { expect } = chai;
 
 const Prc = require('../prc');
-const spikeTest = require('./spikeTest');
+const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
+
 
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
@@ -82,29 +83,40 @@ describe('get PRC index', () => {
     });
 
     describe('get PRC index recursively', () => {
-        let i;
-        let n;
-        beforeEach(() => {
-            i = 1;
-            n = 7;
-        });
-        describe('admin index recursively', () => {
-            const adminUserId = 1;
-            spikeTest.test();
+        describe('user indices', () => {
+            Object.entries(getPRCIndexRecursively.scenarios()).forEach((scenario) => {
+                const userId = scenario[1].userId;
+                const numberPRCsUsed = scenario[1].numberPRCsUsed;
+                const expected = scenario[1].expected;
+                const i = getPRCIndexRecursively.sharedData().i;
+                const n = getPRCIndexRecursively.sharedData().n;
 
+                it('should return a user index', () => {
+                    const actual = Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n);
+                    expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
+                        .to.eq(expected);
+                });
+            });
+        });
+
+        describe('error handling', () => {
+            let i;
+            let n;
+            beforeEach(() => {
+                i = 1;
+                n = 7;
+            });
+
+            const adminUserId = 1;
             it('throws an error if no remaining PRCs', () => {
                 const numberPRCsUsed = 10;
                 expect(() => Prc.getPRCIndexRecursively(adminUserId, numberPRCsUsed, i, n)).to.throw('No remaining PRCs.');
             });
-        });
-        describe('user indices recursively', () => {
-            describe('user id 2', () => {
-                const userId = 2;
 
-                it('throws an error if no remaining PRCs', () => {
-                    const numberPRCsUsed = 3;
-                    expect(() => Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n)).to.throw('No remaining PRCs.');
-                });
+            const userId = 2;
+            it('throws an error if no remaining PRCs', () => {
+                const numberPRCsUsed = 3;
+                expect(() => Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n)).to.throw('No remaining PRCs.');
             });
         });
     });
