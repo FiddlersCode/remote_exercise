@@ -25,25 +25,12 @@ describe('get PRC index', () => {
 
         describe('error handling', () => {
             Object.entries(getPRCIndex.errorScenarios()).forEach((errorScenario) => {
-                return errorScenario;
-            });
-        });
-        describe('admin index with loop', () => {
-            const adminUserId = 1;
-
-            it('throws an error if no remaining PRCs', () => {
-                const numberPRCsUsed = 10;
-                expect(() => Prc.getPRCIndex(adminUserId, numberPRCsUsed)).to.throw('No remaining PRCs.');
-            });
-        });
-
-        describe('user indices with loop', () => {
-            describe('user id 2', () => {
-                const userId = 2;
-                it('throws an error if no remaining PRCs', () => {
-                    const numberPRCsUsed = 3;
-                    expect(() => Prc.getPRCIndex(userId, numberPRCsUsed)).to.throw('No remaining PRCs.');
-                });
+                const userId = errorScenario[1].userId;
+                const numberPRCsUsed = errorScenario[1].numberPRCsUsed;
+                expect(() => Prc.getPRCIndex(
+                    userId,
+                    numberPRCsUsed,
+                )).to.throw(ErrorMessages.errorMessages().noPrcError);
             });
         });
     });
