@@ -3,7 +3,7 @@ const chai = require('chai');
 const { expect } = chai;
 
 const Prc = require('../prc');
-const getPRCIndex = require('./params/getPRCIndex');
+const PrcIndexParams = require('./params/prcIndexParams');
 const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
 const isUserAdmin = require('./params/isUserAdmin');
 const ErrorMessages = require('./params/errorMessages');
@@ -11,12 +11,12 @@ const ErrorMessages = require('./params/errorMessages');
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('user indices', () => {
-            Object.entries(getPRCIndex.scenarios()).forEach((scenario) => {
-                const adminUserId = scenario[1].userId;
+            Object.entries(PrcIndexParams.scenarios()).forEach((scenario) => {
+                const userId = scenario[1].userId;
                 const numberPRCsUsed = scenario[1].numberPRCsUsed;
                 const expected = scenario[1].expected;
                 it('should return an admin index', () => {
-                    const actual = Prc.getPRCIndex(adminUserId, numberPRCsUsed);
+                    const actual = Prc.getPRCIndex(userId, numberPRCsUsed);
                     expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
                         .to.eq(expected);
                 });
@@ -24,7 +24,7 @@ describe('get PRC index', () => {
         });
 
         describe('error handling', () => {
-            Object.entries(getPRCIndex.errorScenarios()).forEach((errorScenario) => {
+            Object.entries(PrcIndexParams.errorScenarios()).forEach((errorScenario) => {
                 const userId = errorScenario[1].userId;
                 const numberPRCsUsed = errorScenario[1].numberPRCsUsed;
                 expect(() => Prc.getPRCIndex(
@@ -44,7 +44,7 @@ describe('get PRC index', () => {
         });
 
         describe('user indices', () => {
-            Object.entries(getPRCIndexRecursively.scenarios()).forEach((scenario) => {
+            Object.entries(PrcIndexParams.scenarios()).forEach((scenario) => {
                 const userId = scenario[1].userId;
                 const numberPRCsUsed = scenario[1].numberPRCsUsed;
                 const expected = scenario[1].expected;
@@ -58,7 +58,7 @@ describe('get PRC index', () => {
         });
 
         describe('error handling', () => {
-            Object.entries(getPRCIndexRecursively.errorScenarios()).forEach((errorScenario) => {
+            Object.entries(PrcIndexParams.errorScenarios()).forEach((errorScenario) => {
                 it('throws an error if no remaining PRCs', () => {
                     const userId = errorScenario[1].userId;
                     const numberPRCsUsed = errorScenario[1].numberPRCsUsed;

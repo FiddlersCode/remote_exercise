@@ -1,4 +1,4 @@
-class getPRCIndex {
+class PrcIndexParams {
     static scenarios() {
         return {
             scenario1: {
@@ -24,6 +24,8 @@ class getPRCIndex {
                 numberPRCsUsed: 1,
                 expected: 12,
             },
+
+
             scenario5: {
                 userId: 3,
                 numberPRCsUsed: 0,
@@ -34,18 +36,6 @@ class getPRCIndex {
                 userId: 3,
                 numberPRCsUsed: 1,
                 expected: 15,
-            },
-
-            scenario7: {
-                userId: 4,
-                numberPRCsUsed: 1,
-                expected: 18,
-            },
-
-            scenario8: {
-                userId: 4,
-                numberPRCsUsed: 2,
-                expected: 19,
             },
         };
     }
@@ -64,4 +54,4 @@ class getPRCIndex {
     }
 }
 
-module.exports = getPRCIndex;
+module.exports = PrcIndexParams;
