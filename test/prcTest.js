@@ -41,8 +41,8 @@ describe('get PRC index', () => {
                     const actual = Prc.getPRCIndexRecursively(
                         scenario[1].userId,
                         scenario[1].numberPRCsUsed,
-                        getPRCIndexRecursively.sharedData().i,
-                        getPRCIndexRecursively.sharedData().n,
+                        getPRCIndexRecursively.data().i,
+                        getPRCIndexRecursively.data().n,
                     );
                     expect(actual, `number of PRCs used: ${scenario[1].numberPRCsUsed}`)
                         .to.eq(scenario[1].expected);
@@ -56,8 +56,8 @@ describe('get PRC index', () => {
                     expect(() => Prc.getPRCIndexRecursively(
                         errorScenario[1].userId,
                         errorScenario[1].numberPRCsUsed,
-                        getPRCIndexRecursively.sharedData().i,
-                        getPRCIndexRecursively.sharedData().n,
+                        getPRCIndexRecursively.data().i,
+                        getPRCIndexRecursively.data().n,
                     )).to.throw(ErrorMessages.errorMessages().noPrcError);
                 });
             });
