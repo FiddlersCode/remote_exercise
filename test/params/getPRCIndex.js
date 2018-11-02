@@ -49,6 +49,19 @@ class getPRCIndex {
             },
         };
     }
+
+    static errorScenarios() {
+        return {
+            scenario1: {
+                userId: 1,
+                numberPRCsUsed: 10,
+            },
+            scenario2: {
+                userId: 2,
+                numberPRCsUsed: 3,
+            },
+        };
+    }
 }
 
 module.exports = getPRCIndex;
