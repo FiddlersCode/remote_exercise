@@ -59,12 +59,6 @@ class getPRCIndexRecursively {
             },
         };
     }
-
-    static errorMessages() {
-        return {
-            noPrcError: 'No remaining PRCs.',
-        };
-    }
 }
 
 module.exports = getPRCIndexRecursively;
