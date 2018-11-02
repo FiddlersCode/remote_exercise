@@ -1,10 +1,12 @@
+const ErrorMessages = require('./test/params/errorMessages');
+
 class PRC {
-    static getPRCIndex(userId, numberPRCsUsed) {
+    static getPRCIndexWithLoop(userId, numberPRCsUsed) {
         const adminUserMaxPRCs = 10;
         const normalUserMaxPRCs = 3;
 
         if (numberPRCsUsed >= adminUserMaxPRCs) {
-            throw new Error('No remaining PRCs.');
+            throw new Error(ErrorMessages.errorMessages().noPrcError);
         }
 
         if (this.isUserAdmin(userId)) {
@@ -12,7 +14,7 @@ class PRC {
         }
 
         if (numberPRCsUsed >= normalUserMaxPRCs) {
-            throw new Error('No remaining PRCs.');
+            throw new Error(ErrorMessages.errorMessages().noPrcError);
         }
         let n = 7;
         for (let i = 1; i < userId; i += 1) {
@@ -26,7 +28,7 @@ class PRC {
         const normalUserMaxPRCs = 3;
 
         if (numberPRCsUsed >= adminUserMaxPRCs) {
-            throw new Error('No remaining PRCs.');
+            throw new Error(ErrorMessages.errorMessages().noPrcError);
         }
 
         if (this.isUserAdmin(userId)) {
@@ -34,7 +36,7 @@ class PRC {
         }
 
         if (numberPRCsUsed >= normalUserMaxPRCs) {
-            throw new Error('No remaining PRCs.');
+            throw new Error(ErrorMessages.errorMessages().noPrcError);
         }
 
         if (i < userId) {
