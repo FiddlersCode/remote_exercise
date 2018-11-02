@@ -4,6 +4,7 @@ const { expect } = chai;
 
 const Prc = require('../prc');
 const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
+const isUserAdmin = require('./params/isUserAdmin');
 const ErrorMessages = require('./params/errorMessages');
 
 describe('get PRC index', () => {
@@ -121,14 +122,11 @@ describe('get PRC index', () => {
     });
 
     describe('is user admin', () => {
-        it('returns an admin index', () => {
-            const userId = 1;
-            expect(Prc.isUserAdmin(userId)).to.eq(true);
-        });
-
-        it('returns an user index', () => {
-            const userId = 2;
-            expect(Prc.isUserAdmin(userId)).to.eq(false);
+        Object.entries(isUserAdmin.scenarios()).forEach((scenario) => {
+            it('returns an admin index', () => {
+                const userId = scenario[1].userId;
+                expect(Prc.isUserAdmin(userId)).to.eq(scenario[1].expected);
+            });
         });
     });
 });

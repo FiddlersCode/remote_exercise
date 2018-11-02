@@ -47,6 +47,7 @@ class PRC {
     }
 
     static isUserAdmin(userId) {
+        console.log('user id in code', userId, typeof userId);
         return userId === 1;
     }
 }
