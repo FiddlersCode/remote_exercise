@@ -90,19 +90,7 @@ describe('get PRC index', () => {
         });
         describe('admin index recursively', () => {
             const adminUserId = 1;
-            const numbersPRCsUsed = { 0: 1, 3: 4 };
             spikeTest.test();
-
-
-            Object.entries(numbersPRCsUsed).forEach((entry) => {
-                const numberPRCsUsed = parseInt(entry[0], 10);
-                const expected = parseInt(entry[1], 10);
-                it('should return an admin index', () => {
-                    const actual = Prc.getPRCIndexRecursively(adminUserId, numberPRCsUsed, i, n);
-                    expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
-                        .to.eq(expected);
-                });
-            });
 
             it('throws an error if no remaining PRCs', () => {
                 const numberPRCsUsed = 10;
