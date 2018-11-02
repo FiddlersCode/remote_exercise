@@ -112,51 +112,10 @@ describe('get PRC index', () => {
         describe('user indices recursively', () => {
             describe('user id 2', () => {
                 const userId = 2;
-                const numbersPRCsUsed = { 0: 11, 1: 12 };
-
-                Object.entries(numbersPRCsUsed).forEach((entry) => {
-                    const numberPRCsUsed = parseInt(entry[0], 10);
-                    const expected = parseInt(entry[1], 10);
-                    it('should return a user index', () => {
-                        const actual = Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n);
-                        expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
-                            .to.eq(expected);
-                    });
-                });
 
                 it('throws an error if no remaining PRCs', () => {
                     const numberPRCsUsed = 3;
                     expect(() => Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n)).to.throw('No remaining PRCs.');
-                });
-            });
-
-            describe('user id 3', () => {
-                const userId = 3;
-                const numbersPRCsUsed = { 0: 14, 1: 15 };
-
-                Object.entries(numbersPRCsUsed).forEach((entry) => {
-                    const numberPRCsUsed = parseInt(entry[0], 10);
-                    const expected = parseInt(entry[1], 10);
-                    it('should return a user index', () => {
-                        const actual = Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n);
-                        expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
-                            .to.eq(expected);
-                    });
-                });
-            });
-
-            describe('user id 4', () => {
-                const userId = 4;
-                const numbersPRCsUsed = { 1: 18, 2: 19 };
-
-                Object.entries(numbersPRCsUsed).forEach((entry) => {
-                    const numberPRCsUsed = parseInt(entry[0], 10);
-                    const expected = parseInt(entry[1], 10);
-                    it('should return a user index', () => {
-                        const actual = Prc.getPRCIndexRecursively(userId, numberPRCsUsed, i, n);
-                        expect(actual, `number of PRCs used: ${numberPRCsUsed}`)
-                            .to.eq(expected);
-                    });
                 });
             });
         });
