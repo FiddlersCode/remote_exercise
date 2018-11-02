@@ -12,7 +12,7 @@
   "pre-commit": "coverage, eslint",
   "nyc": {
     "exclude": [
-      "test.js"
+      "test/*"
     ]
   },
   "license": "ISC",

@@ -3,7 +3,7 @@ const chai = require('chai');
 const { expect } = chai;
 
 const Prc = require('../prc');
-const spikeTest = require('../spikeTest');
+const spikeTest = require('./spikeTest');
 
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
