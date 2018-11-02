@@ -33,7 +33,7 @@ describe('get PRC index', () => {
 
     describe('get PRC index recursively', () => {
         describe('user indices', () => {
-            Object.entries(PrcIndexParams.scenarios()).forEach((scenario) => {
+            Object.entries(getPRCIndexRecursively.scenarios()).forEach((scenario) => {
                 it('should return a user index', () => {
                     const actual = Prc.getPRCIndexRecursively(
                         scenario[1].userId,
@@ -48,7 +48,7 @@ describe('get PRC index', () => {
         });
 
         describe('error handling', () => {
-            Object.entries(PrcIndexParams.errorScenarios()).forEach((errorScenario) => {
+            Object.entries(getPRCIndexRecursively.errorScenarios()).forEach((errorScenario) => {
                 it('throws an error if no remaining PRCs', () => {
                     expect(() => Prc.getPRCIndexRecursively(
                         errorScenario[1].userId,
