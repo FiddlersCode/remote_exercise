@@ -1,7 +1,7 @@
 const ErrorMessages = require('./test/params/errorMessages');
 
 class PRC {
-    static getPRCIndex(userId, numberPRCsUsed) {
+    static getPRCIndexWithLoop(userId, numberPRCsUsed) {
         const adminUserMaxPRCs = 10;
         const normalUserMaxPRCs = 3;
 

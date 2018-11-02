@@ -3,7 +3,7 @@ const chai = require('chai');
 const { expect } = chai;
 
 const Prc = require('../prc');
-const getPRCIndex = require('./params/getPRCIndex');
+const getPRCIndexWithLoop = require('./params/getPRCIndexWithLoop');
 const getPRCIndexRecursively = require('./params/getPRCIndexRecursively');
 const isUserAdmin = require('./params/isUserAdmin');
 const ErrorMessages = require('./params/errorMessages');
@@ -12,9 +12,12 @@ const ErrorMessages = require('./params/errorMessages');
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('user indices', () => {
-            Object.entries(getPRCIndex.scenarios()).forEach((scenario) => {
+            Object.entries(getPRCIndexWithLoop.scenarios()).forEach((scenario) => {
                 it('should return an admin index', () => {
-                    const actual = Prc.getPRCIndex(scenario[1].userId, scenario[1].numberPRCsUsed);
+                    const actual = Prc.getPRCIndexWithLoop(
+                        scenario[1].userId,
+                        scenario[1].numberPRCsUsed,
+                    );
                     expect(actual, `number of PRCs used: ${scenario[1].numberPRCsUsed}`)
                         .to.eq(scenario[1].expected);
                 });
@@ -22,8 +25,8 @@ describe('get PRC index', () => {
         });
 
         describe('error handling', () => {
-            Object.entries(getPRCIndex.errorScenarios()).forEach((errorScenario) => {
-                expect(() => Prc.getPRCIndex(
+            Object.entries(getPRCIndexWithLoop.errorScenarios()).forEach((errorScenario) => {
+                expect(() => Prc.getPRCIndexWithLoop(
                     errorScenario[1].userId,
                     errorScenario[1].numberPRCsUsed,
                 )).to.throw(ErrorMessages.errorMessages().noPrcError);
