@@ -52,13 +52,17 @@ class getPRCIndexRecursively {
             scenario1: {
                 userId: 1,
                 numberPRCsUsed: 10,
-                errorMessage: 'No remaining PRCs.',
             },
             scenario2: {
                 userId: 2,
                 numberPRCsUsed: 3,
-                errorMessage: 'No remaining PRCs.',
             },
+        };
+    }
+
+    static errorMessages() {
+        return {
+            noPrcError: 'No remaining PRCs.',
         };
     }
 }

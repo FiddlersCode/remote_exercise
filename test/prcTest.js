@@ -114,7 +114,7 @@ describe('get PRC index', () => {
                         numberPRCsUsed,
                         i,
                         n,
-                    )).to.throw(errorScenario[1].errorMessage);
+                    )).to.throw(getPRCIndexRecursively.errorMessages().noPrcError);
                 });
             });
         });
