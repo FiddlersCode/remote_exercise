@@ -4,7 +4,7 @@ const { expect } = chai;
 
 
 class CocoaJS {
-    static runTests(scenarios, setup, paramsFilePath) {
+    static eq(scenarios, setup, paramsFilePath) {
         const paramsFile = require(paramsFilePath);
         const codeFile = require(paramsFile.setup().codeFile);
 

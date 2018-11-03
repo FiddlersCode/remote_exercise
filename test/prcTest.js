@@ -13,7 +13,7 @@ const ErrorMessages = require('./params/errorMessages');
 describe('get PRC index', () => {
     describe('get PRC index with loop', () => {
         describe('user indices', () => {
-            CocoaJS.runTests(
+            CocoaJS.eq(
                 getPRCIndexWithLoop.scenarios(),
                 getPRCIndexWithLoop.setup(),
                 getPRCIndexWithLoop.setup().paramsFilePath,
@@ -32,7 +32,7 @@ describe('get PRC index', () => {
 
     describe('get PRC index recursively', () => {
         describe('user indices', () => {
-            CocoaJS.runTests(
+            CocoaJS.eq(
                 getPRCIndexRecursively.scenarios(),
                 getPRCIndexRecursively.setup(),
                 getPRCIndexRecursively.setup().paramsFilePath,
